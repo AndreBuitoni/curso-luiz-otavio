@@ -5,8 +5,8 @@ import { Component} from 'react';
 import './App.css';
 
 // Minhas importações
-import { PostCard } from './components/PostCard';
 import { loadPosts } from './utils/load-posts'
+import { Posts } from './components/Posts';
 
 class App extends Component {
   state = {
@@ -28,17 +28,7 @@ class App extends Component {
     return(
 
       <section className='container'>
-        <div className="posts">
-          {posts.map(post => (
-            <PostCard 
-              key={post.id} 
-              title={post.title} 
-              body={post.body} 
-              id={post.id} 
-              cover={post.cover}
-            />
-          ))}
-        </div>
+        <Posts posts={posts} />
       </section>
     )
   }
