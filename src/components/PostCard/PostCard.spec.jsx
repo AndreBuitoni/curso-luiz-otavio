@@ -19,6 +19,6 @@ describe('<PostCard />', () => {
 
   it('should match snapshot', () => {
     const { container } = render(<PostCard {...props} />)
-    expect(container.firstChild).toMatchSnapshot()
+    expect(container).toMatchSnapshot()
   })
 })
