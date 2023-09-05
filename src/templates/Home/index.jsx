@@ -1,4 +1,5 @@
 // Importações Gerais - Libs Externas
+import React from 'react'
 import { useState, useEffect, useCallback } from 'react';
 
 // Importações de CSS
@@ -19,10 +20,10 @@ export const Home = () => {
 
   const noMorePosts = page + postsPerPage >= allPosts.length
 
-  const filteredPosts = !!searchValue ?
+  const filteredPosts = searchValue ?
   allPosts.filter(post => {
     return post.title.toLowerCase().includes(searchValue.toLowerCase())
-  }) 
+  })
   : posts
 
   const handleLoadPosts = useCallback(async (page, postsPerPage) => {
@@ -66,7 +67,7 @@ export const Home = () => {
       {filteredPosts.length === 0 && (
         <p>Não existem posts com esse</p>
       )}
-      
+
       <div className="button-container">
         {!searchValue && (
           <Button
@@ -77,5 +78,5 @@ export const Home = () => {
         )}
       </div>
     </section>
-  ) 
+  )
 }
